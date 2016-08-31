@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.16, created on 2014-06-11 10:38:21
+<?php /* Smarty version Smarty-3.1.16, created on 2016-08-31 17:36:28
          compiled from "tpl\admin\login.html" */ ?>
 <?php /*%%SmartyHeaderCode:8914539827e3a95c38-66862379%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '5c80e3fb42803f2b44cb2faa36ed4473503b114f' => 
     array (
       0 => 'tpl\\admin\\login.html',
-      1 => 1402482676,
+      1 => 1472654401,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'unifunc' => 'content_539827e3adeff3_95667763',
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_539827e3adeff3_95667763')) {function content_539827e3adeff3_95667763($_smarty_tpl) {?><!doctype html>
+<?php if ($_valid && !is_callable('content_539827e3adeff3_95667763')) {function content_539827e3adeff3_95667763($_smarty_tpl) {?><! 后台登录页面模板 > 
+<!doctype html>
 <html>
 <head>
 	<meta charset="utf-8"/>

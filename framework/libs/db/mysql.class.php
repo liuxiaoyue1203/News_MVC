@@ -131,4 +131,12 @@ class mysql{
 
 }
 
+//$config=array('dbhost' => 'localhost', 'dbuser'=>'root', 'dbpsw' => '123456' , 'dbname' => 'newsreport', 'dbcharset' => 'utf8');
+//$arr=array('title'=>'yue','author'=>'我的');
+//$obj=new mysql();
+//$obj->connect($config);
+//$obj->query('set names utf8');
+//$obj->insert('news',$arr);
+
+
 ?>

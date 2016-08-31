@@ -1,0 +1,18 @@
+
+目录结构
+/tpl/ 视图模板，html文件
+		admin/ 后台管理的视图模板
+/libs/ 控制器 模式
+/img/ 一些CSS JS 相关文件及图像文件
+/framework/  微型架构
+		function/  函数库 C V M ORG 函数
+		libs/core/ 核心库
+		libs/db/   DB引擎库
+		libs/view/ 视图引擎库smarty
+		pc.php     pc类，设置使用的数据库和视图模板
+		include.list.php  require文件清单
+/data/
+/config.php    smarty视图与mysql的相关配置
+/admin.php     后台管理系统入口文件
+
+

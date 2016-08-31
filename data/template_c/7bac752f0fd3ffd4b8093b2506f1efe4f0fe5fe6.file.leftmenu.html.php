@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.16, created on 2014-06-15 13:25:41
+<?php /* Smarty version Smarty-3.1.16, created on 2016-08-31 15:27:03
          compiled from "tpl\admin\leftmenu.html" */ ?>
 <?php /*%%SmartyHeaderCode:26293539d921c295dd0-60924783%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '7bac752f0fd3ffd4b8093b2506f1efe4f0fe5fe6' => 
     array (
       0 => 'tpl\\admin\\leftmenu.html',
-      1 => 1402838736,
+      1 => 1402838738,
       2 => 'file',
     ),
   ),
