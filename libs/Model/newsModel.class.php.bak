@@ -5,7 +5,7 @@
 		public $_table = 'news';
 		
 		publics function getnewsinfo($id){
-			if(empty($id)){
+			if(isset($_GET['id'])){
 				$id = intval($_GET['id']);
 				$newsobj = M('news');
 				return $newsobj->findOne_by_id($id);

@@ -41,7 +41,6 @@
 		// ÍË³öµÇÂ¼
 		public function logout(){
 			unset($_SESSION['auth']);
-			$this->auth='';
 		}
 
 	}

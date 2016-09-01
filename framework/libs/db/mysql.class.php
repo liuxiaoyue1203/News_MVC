@@ -22,7 +22,7 @@ class mysql{
 	 **/
 	function connect($config){
 		extract($config);
-		if(!($con = mysql_connect($dbhost,$dbuser,$dbpsw))){//mysql_connect连接数据库函数
+		if(!(@$con = mysql_connect($dbhost,$dbuser,$dbpsw))){//mysql_connect连接数据库函数
 			$this->err(mysql_error());
 		}
 		if(!mysql_select_db($dbname,$con)){//mysql_select_db选择库的函数
