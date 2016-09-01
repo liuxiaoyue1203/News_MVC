@@ -1,40 +1,56 @@
 
 
+
+
+
+--
+-- Database: `newsreport`
+--
 CREATE DATABASE IF NOT EXISTS `newsreport` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 USE `newsreport`;
 
+-- --------------------------------------------------------
+
+--
+-- è¡¨çš„ç»“æ„ `admin`
+--
+
 CREATE TABLE IF NOT EXISTS `admin` (
-  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '±àºÅ',
-  `username` varchar(50) NOT NULL COMMENT '¹ÜÀíÔ±ÓÃ»§Ãû',
-  `password` varchar(50) NOT NULL COMMENT '¹ÜÀíÔ±ÃÜÂë',
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ç¼–å·',
+  `username` varchar(50) NOT NULL COMMENT 'ç®¡ç†å‘˜ç”¨æˆ·å',
+  `password` varchar(50) NOT NULL COMMENT 'ç®¡ç†å‘˜å¯†ç ',
   PRIMARY KEY (`id`),
   UNIQUE KEY `id` (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
 
-
 --
--- ×ª´æ±íÖĞµÄÊı¾İ `admin`
+-- è½¬å­˜è¡¨ä¸­çš„æ•°æ® `admin`
 --
 
 INSERT INTO `admin` (`id`, `username`, `password`) VALUES
 (1, 'admin', 'admin');
 
-
 -- --------------------------------------------------------
 
 --
--- ±íµÄ½á¹¹ `news`
+-- è¡¨çš„ç»“æ„ `news`
 --
 
 CREATE TABLE IF NOT EXISTS `news` (
-  `id` int(4) NOT NULL AUTO_INCREMENT COMMENT '±àºÅ',
-  `title` char(50)  NOT NULL COMMENT '±êÌâ',
-  `author` varchar(20) NOT NULL COMMENT '×÷Õß',
-  `from` varchar(20)  NOT NULL COMMENT '³ö´¦',
-  `content` text  NOT NULL COMMENT 'ÄÚÈİ',
-  `dateline` int(4) DEFAULT '0' COMMENT 'Ê±¼ä',
+  `id` int(4) NOT NULL AUTO_INCREMENT COMMENT 'æ–°é—»ç¼–å·',
+  `title` char(50) NOT NULL COMMENT 'æ–°é—»æ ‡é¢˜',
+  `author` varchar(20) NOT NULL COMMENT 'ä½œè€…',
+  `from` varchar(20) NOT NULL COMMENT 'å‡ºå¤„',
+  `content` text NOT NULL COMMENT 'å†…å®¹',
+  `dateline` int(4) DEFAULT '0' COMMENT 'æ—¥æœŸ',
   PRIMARY KEY (`id`),
   UNIQUE KEY `id` (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
 
+--
+-- è½¬å­˜è¡¨ä¸­çš„æ•°æ® `news`
+--
+
+INSERT INTO `news` (`id`, `title`, `author`, `from`, `content`, `dateline`) VALUES
+(1, 'æ–°é—»', 'æ™“è·ƒ', 'sz', 'è¿™æ˜¯ä¸€ç¯‡æ–°é—»', 20160901);
 
