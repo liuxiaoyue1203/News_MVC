@@ -4,13 +4,44 @@
 
 		public $_table = 'news';
 		
-		publics function getnewsinfo($id){
-			if(isset($_GET['id'])){
-				$id = intval($_GET['id']);
-				$newsobj = M('news');
-				return $newsobj->findOne_by_id($id);
-			}else{
+		// 根据id读取新闻信息
+		public function getnewsinfo($id){
+			if(empty($id)){
 				return array();
+			}else{
+				$id = intval($id); // 防止sql注入
+				$sql='select * from'.$this->_table.'where id='.$id;
+				return DB::findOne($sql);
+			}
+		}
+		
+		// 处理、保存newsadd.html提交的新闻信息
+		public function newssubmit($data){
+			extract($data);				
+			if(empty($title)||empty($content)){
+				return 0;
+				//提示message属于表现层的东西
+				
+			}
+			$title = daddslashes($title);
+			$content = daddslashes($content);
+			$author = daddslashes($author);
+			$from = daddslashes($from);
+			$newsobj = M('news');
+			$data = array(
+				'title'=>$title,
+				'content'=>$content,
+				'author'=>$author,
+				'from'=>$from,
+				'dateline'=>time()
+			);
+			if($_POST['id']!=''){
+				DB::update($this->_table,$data,'id='.$id);
+				return 2;			
+			}else{
+				DB::insert($this->_table,$data);
+				return 1;
+				
 			}
 		}
 

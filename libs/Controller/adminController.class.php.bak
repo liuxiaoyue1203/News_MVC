@@ -40,11 +40,15 @@
 
 	  // 添加新闻
 		public function newsadd(){
-			if(!isset($_POST['submit'])){
-				$data = $this->getnewsinfo();
+			if(empty($_POST)){// 没有数据时显示添加、修改界面
+				if(isset($_GET['id'])){
+					$data=M('news')->getnewsinfo($_GET['id']);	
+				}else{
+					$data=array();	
+				}
 				VIEW::assign(array('data'=>$data));
 				VIEW::display('admin/newsadd.html');
-			}else{
+			}else{// 得到newsadd.html提交的数据后，进入添加、修改的处理程序
 				$this->newssubmit();
 			}
 		}
@@ -75,15 +79,7 @@
 			}
 		}
 
-		private function getnewsinfo(){
-			if(isset($_GET['id'])){
-				$id = intval($_GET['id']);
-				$newsobj = M('news');
-				return $newsobj->findOne_by_id($id);
-			}else{
-				return array();
-			}
-		}
+		
 
 		private function getnewslist(){
 			$newsobj = M('news');
@@ -96,28 +92,14 @@
 		}
 
 		private function newssubmit(){
-			extract($_POST);				
-			if(empty($title)||empty($content)){
-				$this->showmessage('请把新闻标题、内容填写完整再提交！', 'admin.php?controller=admin&method=newsadd');
-			}
-			$title = daddslashes($title);
-			$content = daddslashes($content);
-			$author = daddslashes($author);
-			$from = daddslashes($from);
-			$newsobj = M('news');
-			$data = array(
-				'title'=>$title,
-				'content'=>$content,
-				'author'=>$author,
-				'from'=>$from,
-				'dateline'=>time()
-			);
-			if($_POST['id']!=''){
-				$newsobj ->update($data, intval($_POST['id']));
-				$this->showmessage('修改成功！', 'admin.php?controller=admin&method=newslist');
-			}else{
-				$newsobj ->insert($data);
+			$newsobj=M('news');
+			$result=$newsobj->newssubmit($_POST);
+			if($result==0){
+				$this->showmessage('请把新闻标题、内容填写完整再提交！', 'admin.php?controller=admin&method=newsadd&id='.$_POST['id']);
+			}elseif($result==1){
 				$this->showmessage('发布成功！', 'admin.php?controller=admin&method=newslist');
+			}elseif($result==2){
+				$this->showmessage('修改成功！', 'admin.php?controller=admin&method=newslist');
 			}
 		}
 
