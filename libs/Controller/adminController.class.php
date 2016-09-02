@@ -53,17 +53,20 @@
 			}
 		}
 		
-		//管理新闻
+		// 新闻列表
 		public function newslist(){
-			$data = $this->getnewslist();
+			$newsobj = M('news');
+			$data=$newsobj->findAll_orderby_dateline();
 			VIEW::assign(array('data'=>$data));
 			VIEW::display('admin/newslist.html');
 		}
 
-		
+		// 根据id删除新闻
 		public function newsdel(){
-			if($_GET['id']){
-				$this->delnews();
+			if(intval($_GET['id'])){
+				$newsobj = M('news');
+				$newsobj->del_by_id(intval($_GET['id']));
+				// 可以优化，对删除结构进行判断
 				$this->showmessage('删除新闻成功！', 'admin.php?controller=admin&method=newslist');
 			}
 		}
@@ -79,17 +82,6 @@
 			}
 		}
 
-		
-
-		private function getnewslist(){
-			$newsobj = M('news');
-			return $newsobj->findAll_orderby_dateline();
-		}
-
-		private function delnews(){
-			$newsobj = M('news');
-			return $newsobj->del_by_id($_GET['id']);
-		}
 
 		private function newssubmit(){
 			$newsobj=M('news');

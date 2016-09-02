@@ -1,30 +1,30 @@
-<?php /* Smarty version Smarty-3.1.16, created on 2016-08-31 15:27:09
+<?php /* Smarty version Smarty-3.1.16, created on 2016-09-02 06:56:22
          compiled from "tpl\admin\newslist.html" */ ?>
-<?php /*%%SmartyHeaderCode:15668539d93e66b70b9-78548279%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:175957c906765615d2-11149234%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '79b02dc9ee4a4edeacd766122de7f48dbfba6d8a' => 
     array (
       0 => 'tpl\\admin\\newslist.html',
-      1 => 1402837012,
+      1 => 1472791743,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '15668539d93e66b70b9-78548279',
+  'nocache_hash' => '175957c906765615d2-11149234',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.16',
-  'unifunc' => 'content_539d93e688eb01_42141355',
   'variables' => 
   array (
     'data' => 0,
     'value' => 0,
   ),
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.16',
+  'unifunc' => 'content_57c90676749ac3_92408284',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_539d93e688eb01_42141355')) {function content_539d93e688eb01_42141355($_smarty_tpl) {?><!doctype html>
+<?php if ($_valid && !is_callable('content_57c90676749ac3_92408284')) {function content_57c90676749ac3_92408284($_smarty_tpl) {?><!doctype html>
 <html>
 <head>
 	<meta charset="utf-8"/>
@@ -127,7 +127,8 @@ $_smarty_tpl->tpl_vars['value']->_loop = true;
 			    				<td><?php echo $_smarty_tpl->tpl_vars['value']->value['author'];?>
 </td> 
 			    				<td><input type="image" src="img/images/icn_edit.png" title="Edit" onclick="window.location.href='admin.php?controller=admin&method=newsadd&id=<?php echo $_smarty_tpl->tpl_vars['value']->value['id'];?>
-'"><input type="image" src="img/images/icn_trash.png" title="Trash" onclick="window.location.href='admin.php?controller=admin&method=newsdel&id=<?php echo $_smarty_tpl->tpl_vars['value']->value['id'];?>
+'">
+			    					<input type="image" src="img/images/icn_trash.png" title="Trash" onclick="window.location.href='admin.php?controller=admin&method=newsdel&id=<?php echo $_smarty_tpl->tpl_vars['value']->value['id'];?>
 '"></td>
 						</tr>
 					<?php }

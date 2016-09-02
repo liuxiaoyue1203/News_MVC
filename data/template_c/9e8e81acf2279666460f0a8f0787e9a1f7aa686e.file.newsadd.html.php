@@ -1,29 +1,29 @@
-<?php /* Smarty version Smarty-3.1.16, created on 2016-08-31 15:27:14
+<?php /* Smarty version Smarty-3.1.16, created on 2016-09-02 07:14:52
          compiled from "tpl\admin\newsadd.html" */ ?>
-<?php /*%%SmartyHeaderCode:6331539d9265713ae2-57639055%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:447857c90660bfbdb4-97434735%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '9e8e81acf2279666460f0a8f0787e9a1f7aa686e' => 
     array (
       0 => 'tpl\\admin\\newsadd.html',
-      1 => 1402837524,
+      1 => 1472793283,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '6331539d9265713ae2-57639055',
+  'nocache_hash' => '447857c90660bfbdb4-97434735',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.16',
-  'unifunc' => 'content_539d92657c0ec8_21720221',
+  'unifunc' => 'content_57c90661116dc8_44470892',
   'variables' => 
   array (
     'data' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_539d92657c0ec8_21720221')) {function content_539d92657c0ec8_21720221($_smarty_tpl) {?><!doctype html>
+<?php if ($_valid && !is_callable('content_57c90661116dc8_44470892')) {function content_57c90661116dc8_44470892($_smarty_tpl) {?><!doctype html>
 <html>
 <head>
 	<meta charset="utf-8"/>
@@ -37,8 +37,17 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	<script src="img/js/jquery-1.5.2.min.js" type="text/javascript"></script>
 	<script src="img/js/hideshow.js" type="text/javascript"></script>
 	<script src="img/js/jquery.tablesorter.min.js" type="text/javascript"></script>
-	<script type="text/javascript" src="img/js/jquery.equalHeight.js"></script>
+	<script type="text/javascript" src="img/js/jquery.equalHeight.js"></script>	
+	<script src="img/js/ckeditor/ckeditor.js"></script>	
+	<script src="img/js/ckeditor/adapters/jquery.js"></script>
 	<script type="text/javascript">
+		
+	$(document).ready(function()
+			{
+				  $('#content').ckeditor();
+			}
+	);
+	
 	$(document).ready(function() 
     	{ 
       	  $(".tablesorter").tablesorter(); 
@@ -107,8 +116,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 ">
 							</fieldset>
 							<fieldset>
-								<label>内容</label>
-								<textarea rows="12" name="content"><?php echo (($tmp = @$_smarty_tpl->tpl_vars['data']->value['content'])===null||$tmp==='' ? '' : $tmp);?>
+								
+								<textarea rows="12" id="content" name="content"><?php echo (($tmp = @$_smarty_tpl->tpl_vars['data']->value['content'])===null||$tmp==='' ? '' : $tmp);?>
 </textarea>
 							</fieldset>
 							<fieldset style="width:48%; float:left; margin-right: 3%;">

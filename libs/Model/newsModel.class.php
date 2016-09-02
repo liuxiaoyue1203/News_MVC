@@ -21,7 +21,6 @@
 			if(empty($title)||empty($content)){
 				return 0;
 				//提示message属于表现层的东西
-				
 			}
 			$title = daddslashes($title);
 			$content = daddslashes($content);
@@ -44,7 +43,8 @@
 				
 			}
 		}
-
+		
+		// 查找所有的新闻并按照时间排序
 		function findAll_orderby_dateline(){
 			$sql = 'select * from '.$this->_table.' order by dateline desc';
 			return DB::findAll($sql);
@@ -55,6 +55,7 @@
 			return DB::findOne($sql);
 		}
 
+		// 根据id删除新闻
 		function del_by_id($id){
 			return DB::del($this->_table, 'id='.$id);
 		}
